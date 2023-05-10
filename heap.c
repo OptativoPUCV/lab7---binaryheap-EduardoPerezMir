@@ -46,6 +46,7 @@ void heap_push(Heap* pq, void* data, int priority){
             elemAux = pq->heapArray[auxIndice];
             pq->heapArray[auxIndice] = pq->heapArray[i];
             pq->heapArray[i] = elemAux;
+            auxIndice = i;
         }
     }
 }
