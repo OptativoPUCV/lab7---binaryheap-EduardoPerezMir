@@ -63,7 +63,7 @@ void heap_pop(Heap* pq){
     
     int indexAux = 0;
     
-    while (true)
+    while (1)
     {
         if (indexAux >= pq->capac)    break;
         if (pq->heapArray[indexAux].priority < pq->heapArray[indexAux*2 + 2].priority)
