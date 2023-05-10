@@ -41,7 +41,7 @@ void heap_push(Heap* pq, void* data, int priority){
     }
     for (int i = auxIndice - 1; i >= 0; i--)
     {
-        if (pq->heapArray[auxIndice].priority > pq->heapArray[i].priority)
+        if (pq->heapArray[auxIndice].priority >= pq->heapArray[i].priority)
         {
             elemAux = pq->heapArray[auxIndice];
             pq->heapArray[auxIndice] = pq->heapArray[i];
