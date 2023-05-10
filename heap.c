@@ -31,7 +31,7 @@ void heap_push(Heap* pq, void* data, int priority){
 
     while (1)
     {
-        if (priority > pq->heapArray[(pq->size - 1) / 2].priority)
+        if (priority > pq->heapArray[indexAux - 1 / 2].priority)
             indexAux = (pq->size - 1) / 2;
         else
             break;
@@ -39,7 +39,7 @@ void heap_push(Heap* pq, void* data, int priority){
     
     pq->heapArray[indexAux].data = data;
     pq->heapArray[indexAux].priority = priority;
-    printf("%d", auxIndice);
+    printf("%d", indexAux);
     
 }
 

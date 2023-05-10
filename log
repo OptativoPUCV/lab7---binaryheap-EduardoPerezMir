@@ -632,3 +632,9 @@ heap.c:42:18: error: ‘auxIndice’ undeclared (first use in this function)
 heap.c:42:18: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 e84783e
+Wed 10 May 2023 01:23:00 AM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  2|2
+total_score: 20/70
+2cfa36b
