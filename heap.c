@@ -27,7 +27,7 @@ void* heap_top(Heap* pq){
 
 void heap_push(Heap* pq, void* data, int priority){
     int auxIndice = -1;
-    heapElem elemAux = NULL;
+    heapElem elemAux;
     
     for (int i = 0; i < pq->capac; i++)
     {
