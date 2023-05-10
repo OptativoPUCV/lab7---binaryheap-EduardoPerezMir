@@ -40,6 +40,6 @@ Heap* createHeap(){
     if (newHeap->heapArray == NULL) return NULL;
     newHeap->capac = 3;
     newHeap->size = 0;
-    newHeap->hashArray = NULL;
+    newHeap->heapArray->hashArray = NULL;
     return newHeap;
 }
