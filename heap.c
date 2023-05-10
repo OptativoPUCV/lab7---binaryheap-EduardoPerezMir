@@ -31,8 +31,8 @@ void heap_push(Heap* pq, void* data, int priority){
 
     while (1)
     {
-        if (priority > pq->heapArray[(indexAux - 1 / 2) - 1].priority)
-            indexAux = (pq->size - 1) / 2 - 1;
+        if (priority > pq->heapArray[(indexAux - 1 / 2)].priority)
+            indexAux = (pq->size - 1) / 2;
         else
             break;
     }
