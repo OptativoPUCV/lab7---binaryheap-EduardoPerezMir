@@ -105,3 +105,20 @@ Wed 10 May 2023 12:27:02 AM UTC:
  1 file changed, 1 insertion(+), 2 deletions(-)
  tests:  0|0
 c39207f
+Wed 10 May 2023 12:28:55 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_top’:
+heap.c:21:5: error: unknown type name ‘retur’
+   21 |     retur pq->heapArray[0];
+      |     ^~~~~
+heap.c:21:13: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+   21 |     retur pq->heapArray[0];
+      |             ^~
+heap.c:22:1: error: control reaches end of non-void function [-Werror=return-type]
+   22 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+03f3426
