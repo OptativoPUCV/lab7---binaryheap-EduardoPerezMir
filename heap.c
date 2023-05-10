@@ -18,6 +18,8 @@ typedef struct Heap{
 
 
 void* heap_top(Heap* pq){
+    if (pq->capac == 0 || pq->size == 0)
+        return NULL;
     return pq->heapArray[0].data;
 }
 
