@@ -244,3 +244,14 @@ heap.c:48:41: error: incompatible types when assigning to type ‘int’ from ty
       |                                         ^~~~~~~
 Compilation failed
 7271900
+Wed 10 May 2023 12:46:58 AM UTC: 
+ heap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from /nix/store/4pqv2mwdn88h7xvsm7a5zplrd8sxzvw0-glibc-2.35-163-dev/include/string.h:33,
+                 from test.c:3:
+heap.c: In function ‘heap_push’:
+heap.c:30:24: error: invalid initializer
+   30 |     heapElem elemAux = NULL;
+      |                        ^~~~
+Compilation failed
+077d114
