@@ -61,6 +61,7 @@ void heap_pop(Heap* pq){
     heapElem elemAux = pq->heapArray[pq->size - 1];
     pq->heapArray[pq->size - 1] = pq->heapArray[0];
     pq->heapArray[0] = elemAux;
+    pq->heapArray[pq->size - 1].priority = 0;
     
     int indexAux = 0;
     int indexHijoMayor = -1;
@@ -84,7 +85,7 @@ void heap_pop(Heap* pq){
         else
             break;
     }
-    pq->heapArray[pq->size - 1].priority = 0;
+    
     pq->size--;
 }
 
