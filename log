@@ -906,3 +906,9 @@ heap.c:87:35: error: incompatible types when assigning to type ‘heapElem’ {a
       |                                   ^
 Compilation failed
 7e21802
+Wed 10 May 2023 02:04:40 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  7|1
+total_score: 55/70
+ec1ec4c
