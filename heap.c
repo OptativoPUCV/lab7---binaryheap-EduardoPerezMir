@@ -26,29 +26,20 @@ void* heap_top(Heap* pq){
 
 
 void heap_push(Heap* pq, void* data, int priority){
-    int auxIndice = -1;
-    int priorityAux;
-    
+    int priorityAux = pq->size;
+    int indexAux = pq->size;
     pq->size++;
-    
-    pq->heapArray[pq->size - 1].priority = priority;
-    
-    auxIndice = pq->size - 1;
-    int j = auxIndice - 1;
-    
-    while (j >= 0)
+
+    while (true)
     {
-        if (pq->heapArray[auxIndice].priority >= pq->heapArray[j].priority)
-        {
-            priorityAux = pq->heapArray[auxIndice].priority;
-            pq->heapArray[auxIndice].priority = pq->heapArray[j].priority;
-            pq->heapArray[j].priority = priorityAux;
-            auxIndice = j;
-        }
-        
-        j--;
+        if (priority > (pq->heapArray[(pq->size - 2) / 2] ))
+            indexAux = (pq->size - 2) / 2];
+        else
+            break;
     }
-    pq->heapArray[auxIndice].data = data;
+    
+    pq->heapArray[indexAux].data = data;
+    pq->heapArray[indexAux].priority = priority;
     printf("%d", auxIndice);
     
 }
