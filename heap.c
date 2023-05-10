@@ -28,7 +28,7 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
     int auxIndice = -1;
     int priorityAux;
-    int cont = 0;
+    
     pq->size++;
     
     pq->heapArray[pq->size - 1].priority = priority;
@@ -40,15 +40,14 @@ void heap_push(Heap* pq, void* data, int priority){
     {
         if (pq->heapArray[auxIndice].priority >= pq->heapArray[j].priority)
         {
-            cont++;
-        }
-        if (cont == 1)
-        {
             priorityAux = pq->heapArray[auxIndice].priority;
             pq->heapArray[auxIndice].priority = pq->heapArray[j].priority;
             pq->heapArray[j].priority = priorityAux;
             auxIndice = j;
-            cont  = 0;
+        }
+        else
+        {
+            break;
         }
         j--;
     }
