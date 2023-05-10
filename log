@@ -304,3 +304,9 @@ heap.c:45:64: error: ‘i’ undeclared (first use in this function)
 heap.c:45:64: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 efa19bc
+Wed 10 May 2023 12:54:27 AM UTC: 
+ heap.c | 13 +++++++------
+ 1 file changed, 7 insertions(+), 6 deletions(-)
+ tests:  2|2
+total_score: 20/70
+2fa27e3

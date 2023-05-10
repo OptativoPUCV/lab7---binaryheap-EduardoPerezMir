@@ -39,15 +39,16 @@ void heap_push(Heap* pq, void* data, int priority){
             break;
         }
     }
-    while (auxIndice >= 0)
+    int j = auxIndice - 1;
+    while (j >= 0)
     {
-        auxIndice--;
-        if (pq->heapArray[auxIndice].priority >= pq->heapArray[i].priority)
+        j--;
+        if (pq->heapArray[auxIndice].priority >= pq->heapArray[j].priority)
         {
             elemAux = pq->heapArray[auxIndice];
-            pq->heapArray[auxIndice] = pq->heapArray[i];
-            pq->heapArray[i] = elemAux;
-            auxIndice = i;
+            pq->heapArray[auxIndice] = pq->heapArray[j];
+            pq->heapArray[j] = elemAux;
+            auxIndice = j;
         }
     }
 }
