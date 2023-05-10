@@ -57,15 +57,23 @@ void heap_push(Heap* pq, void* data, int priority){
 
 
 void heap_pop(Heap* pq){
+    if (pq->size == 0) return;
     heapElem elemAux = pq->heapArray[pq->size - 1];
     pq->heapArray[pq->size - 1] = pq->heapArray[0];
     pq->heapArray[0] = elemAux;
     
     int indexAux = 0;
     int indexHijoMayor = -1;
+
     
     while (1)
     {
+        if (pq->size == 2)
+        {
+            pq->heapArray[0] = pq->heapArray[1];
+            break;
+        }
+        
         if (indexAux >= pq->capac)    break;
         if (pq->heapArray[indexAux * 2 + 2].priority > pq->heapArray[indexAux * 2 + 1].priority)
             indexHijoMayor = indexAux * 2 + 2;
