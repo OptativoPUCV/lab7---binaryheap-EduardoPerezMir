@@ -29,7 +29,7 @@ void heap_push(Heap* pq, void* data, int priority){
     int indexAux = pq->size;
     pq->size++;
     
-    printf("%d", 1/2)
+    printf("%d", 1/2);
         if (priority > pq->heapArray[(indexAux - 1) / 2].priority )
         {
             pq->heapArray[indexAux] = pq->heapArray[(indexAux - 1) / 2];
