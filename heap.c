@@ -25,12 +25,17 @@ void* heap_top(Heap* pq){
 
 void heap_push(Heap* pq, void* data, int priority){
     for (int i = 0; i < pq->capac; i++)
+    {
         if (pq->heapArray[i].data == NULL)
         {
             pq->heapArray[i].data = data;
             pq->heapArray[i].priority = priority;
             break;
         }
+    }
+    
+    
+    
 }
 
 
@@ -44,9 +49,9 @@ Heap* createHeap(){
     if (newHeap == NULL) return NULL;
     newHeap->capac = 3;
     newHeap->size = 0;
-    newHeap->heapArray = (heapElem*) malloc(sizeof(heapElem));
+    newHeap->heapArray = (heapElem*) malloc(sizeof(heapElem) * newHeap->capac);
     if (newHeap->heapArray == NULL) return NULL;
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < newHeap->capac; i++)
     {
         newHeap->heapArray[i].data = NULL;
         newHeap->heapArray[i].priority = 0;
