@@ -41,6 +41,6 @@ Heap* createHeap(){
     newHeap->capac = 3;
     newHeap->size = 0;
     newHeap->heapArray->data = NULL;
-    
+    newHeap->heapArray->priority = 0;
     return newHeap;
 }
