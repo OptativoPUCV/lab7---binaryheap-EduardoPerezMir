@@ -817,3 +817,20 @@ heap.c:68:29: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘c
       |                             capac
 Compilation failed
 56de5f9
+Wed 10 May 2023 01:47:31 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:66:12: error: ‘true’ undeclared (first use in this function)
+   66 |     while (true)
+      |            ^~~~
+heap.c:7:1: note: ‘true’ is defined in header ‘<stdbool.h>’; did you forget to ‘#include <stdbool.h>’?
+    6 | #include "heap.h"
+  +++ |+#include <stdbool.h>
+    7 | 
+heap.c:66:12: note: each undeclared identifier is reported only once for each function it appears in
+   66 |     while (true)
+      |            ^~~~
+Compilation failed
+a92b02e
