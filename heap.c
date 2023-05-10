@@ -28,14 +28,14 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
     int indexAux = pq->size;
     pq->size++;
-
+printf("%d", indexAux);
     while (1)
     {
         if (priority > pq->heapArray[(indexAux - 1 / 2)].priority)
             indexAux = (pq->size - 1) / 2;
         else
             break;
-        printf("%d", indexAux);
+        
     }
     
     pq->heapArray[indexAux].data = data;
