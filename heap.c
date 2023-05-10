@@ -39,7 +39,7 @@ void heap_push(Heap* pq, void* data, int priority){
             break;
         }
     }
-    whle (auxIndice >= 0)
+    while (auxIndice >= 0)
     {
         auxIndice--;
         if (pq->heapArray[auxIndice].priority >= pq->heapArray[i].priority)
