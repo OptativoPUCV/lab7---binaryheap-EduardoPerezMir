@@ -872,3 +872,9 @@ heap.c:69:46: error: invalid operands to binary < (have ‘int’ and ‘heapEle
       |                                    int                      heapElem {aka struct nodo}
 Compilation failed
 e316c9f
+Wed 10 May 2023 01:56:00 AM UTC: 
+ heap.c | 7 ++++---
+ 1 file changed, 4 insertions(+), 3 deletions(-)
+ tests:  7|1
+total_score: 50/70
+dc6579c
