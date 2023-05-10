@@ -29,6 +29,9 @@ void heap_push(Heap* pq, void* data, int priority){
     int auxIndice = -1;
     heapElem elemAux;
     pq->size++;
+
+
+    
     for (int i = 0; i < pq->capac; i++)
     {
         if (pq->heapArray[i].data == NULL)
@@ -42,7 +45,6 @@ void heap_push(Heap* pq, void* data, int priority){
     int j = auxIndice - 1;
     while (j >= 0)
     {
-        j--;
         if (pq->heapArray[auxIndice].priority >= pq->heapArray[j].priority)
         {
             elemAux = pq->heapArray[auxIndice];
@@ -50,6 +52,7 @@ void heap_push(Heap* pq, void* data, int priority){
             pq->heapArray[j] = elemAux;
             auxIndice = j;
         }
+        j--;
     }
 }
 
