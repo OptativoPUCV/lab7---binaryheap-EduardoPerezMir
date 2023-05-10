@@ -52,6 +52,7 @@ void heap_push(Heap* pq, void* data, int priority){
         j--;
     }
     pq->heapArray[auxIndice].data = data;
+    printf("%d", auxIndice);
     
 }
 
