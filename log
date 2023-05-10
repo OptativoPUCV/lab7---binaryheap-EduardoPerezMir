@@ -462,3 +462,46 @@ heap.c:29:9: error: unused variable ‘priorityAux’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 8faaf2d
+Wed 10 May 2023 01:20:30 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:33:12: error: ‘true’ undeclared (first use in this function)
+   33 |     while (true)
+      |            ^~~~
+heap.c:7:1: note: ‘true’ is defined in header ‘<stdbool.h>’; did you forget to ‘#include <stdbool.h>’?
+    6 | #include "heap.h"
+  +++ |+#include <stdbool.h>
+    7 | 
+heap.c:33:12: note: each undeclared identifier is reported only once for each function it appears in
+   33 |     while (true)
+      |            ^~~~
+heap.c:35:22: error: invalid operands to binary > (have ‘int’ and ‘heapElem’ {aka ‘struct nodo’})
+   35 |         if (priority > pq->heapArray[(pq->size - 1) / 2])
+      |                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                     |
+      |                                     heapElem {aka struct nodo}
+heap.c:36:42: error: expected ‘;’ before ‘]’ token
+   36 |             indexAux = (pq->size - 2) / 2];
+      |                                          ^
+      |                                          ;
+heap.c:35:9: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   35 |         if (priority > pq->heapArray[(pq->size - 1) / 2])
+      |         ^~
+heap.c:36:42: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   36 |             indexAux = (pq->size - 2) / 2];
+      |                                          ^
+heap.c:36:42: error: expected statement before ‘]’ token
+heap.c:37:9: error: ‘else’ without a previous ‘if’
+   37 |         else
+      |         ^~~~
+heap.c:43:18: error: ‘auxIndice’ undeclared (first use in this function)
+   43 |     printf("%d", auxIndice);
+      |                  ^~~~~~~~~
+heap.c:29:9: error: unused variable ‘priorityAux’ [-Werror=unused-variable]
+   29 |     int priorityAux = pq->size;
+      |         ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+a678592
