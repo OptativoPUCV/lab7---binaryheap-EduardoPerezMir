@@ -165,3 +165,23 @@ Wed 10 May 2023 12:32:56 AM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 48625c4
+Wed 10 May 2023 12:36:44 AM UTC: 
+ heap.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:27:29: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   27 |     for (int i = 0; i < pq->capacity; i++)
+      |                             ^~~~~~~~
+      |                             capac
+heap.c:28:29: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   28 |         if (pq->heapArray[i]->data == NULL)
+      |                             ^~
+heap.c:30:29: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   30 |             pq->heapArray[i]->data = data;
+      |                             ^~
+heap.c:31:29: error: invalid type argument of ‘->’ (have ‘heapElem’ {aka ‘struct nodo’})
+   31 |             pq->heapArray[i]->priority = priority;
+      |                             ^~
+Compilation failed
+80c01e3
