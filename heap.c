@@ -36,10 +36,10 @@ Heap* createHeap(){
     Heap* newHeap = NULL;
     newHeap = (Heap*) malloc(sizeof(Heap));
     if (newHeap == NULL) return NULL;
-    newHeap->heapArray = malloc(sizeof(heapElem));
-    if (newHeap->heapArray == NULL) return NULL;
     newHeap->capac = 3;
     newHeap->size = 0;
+    newHeap->heapArray = malloc(sizeof(heapElem));
+    if (newHeap->heapArray == NULL) return NULL;
     newHeap->heapArray->data = NULL;
     newHeap->heapArray->priority = 0;
     return newHeap;
