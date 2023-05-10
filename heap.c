@@ -68,7 +68,6 @@ void heap_pop(Heap* pq){
     
     while (1)
     {
-        
         if (indexAux >= pq->capac)    break;
         if (pq->heapArray[indexAux * 2 + 2].priority > pq->heapArray[indexAux * 2 + 1].priority)
             indexHijoMayor = indexAux * 2 + 2;
@@ -85,6 +84,7 @@ void heap_pop(Heap* pq){
         else
             break;
     }
+    pq->heapArray[pq->size - 1] = 0;
     pq->size--;
 }
 
