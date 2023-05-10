@@ -75,3 +75,13 @@ heap.c:43:23: error: ‘heapElem’ {aka ‘struct nodo’} has no member named 
       |                       ^~
 Compilation failed
 c74c88a
+Wed 10 May 2023 12:24:39 AM UTC: 
+ heap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:43:23: error: ‘heapElem’ {aka ‘struct nodo’} has no member named ‘heapArray’
+   43 |     newHeap->heapArray->heapArray = NULL;
+      |                       ^~
+Compilation failed
+01168d0
