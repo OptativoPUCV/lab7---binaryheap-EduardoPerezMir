@@ -28,6 +28,12 @@ void* heap_top(Heap* pq){
 void heap_push(Heap* pq, void* data, int priority){
     int indexAux = pq->size;
     pq->size++;
+
+    if (pq->size == pq->capac)
+    {
+        pq->capac *= 2;
+        pq->heapArray = (heapElem *) realloc(pq->heapArray, sizeof(heapArray) * pq->capac);
+    }
     
     while (1)
     {
