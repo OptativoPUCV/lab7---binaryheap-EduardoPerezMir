@@ -62,16 +62,22 @@ void heap_pop(Heap* pq){
     pq->heapArray[0] = elemAux;
     
     int indexAux = 0;
+    int indexHijoMayor = -1;
     
     while (1)
     {
         if (indexAux >= pq->capac)    break;
-        if (pq->heapArray[indexAux].priority < pq->heapArray[indexAux*2 + 2].priority)
+        if (pq->heapArray[indexAux * 2 + 2].priority > pq->heapArray[indexAux * 2 + 1].priority)
+            indexHijoMayor = indexAux * 2 + 2;
+        else
+            indexHijoMayor = indexAux * 2 + 1;
+        
+        if (pq->heapArray[indexAux].priority < pq->heapArray[indexHijoMayor].priority)
         {
             elemAux = pq->heapArray[indexAux];
-            pq->heapArray[indexAux] = pq->heapArray[indexAux*2 + 2];
-            pq->heapArray[indexAux * 2 + 2] = elemAux;
-            indexAux = indexAux * 2 + 2;
+            pq->heapArray[indexAux] = pq->heapArray[indexHijoMayor];
+            pq->heapArray[indexHijoMayor] = elemAux;
+            indexAux = indexHijoMayor;
         }
         else
             break;
