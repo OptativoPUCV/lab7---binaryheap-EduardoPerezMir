@@ -42,7 +42,7 @@ void heap_push(Heap* pq, void* data, int priority){
         {
             cont++;
         }
-        if (cont >= 1)
+        if (cont == 1)
         {
             priorityAux = pq->heapArray[auxIndice].priority;
             pq->heapArray[auxIndice].priority = pq->heapArray[j].priority;
