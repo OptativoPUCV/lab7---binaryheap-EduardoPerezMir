@@ -548,3 +548,32 @@ heap.c:29:9: error: unused variable ‘priorityAux’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 bc4c976
+Wed 10 May 2023 01:20:42 AM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:33:12: error: ‘true’ undeclared (first use in this function)
+   33 |     while (true)
+      |            ^~~~
+heap.c:7:1: note: ‘true’ is defined in header ‘<stdbool.h>’; did you forget to ‘#include <stdbool.h>’?
+    6 | #include "heap.h"
+  +++ |+#include <stdbool.h>
+    7 | 
+heap.c:33:12: note: each undeclared identifier is reported only once for each function it appears in
+   33 |     while (true)
+      |            ^~~~
+heap.c:35:22: error: invalid operands to binary > (have ‘int’ and ‘heapElem’ {aka ‘struct nodo’})
+   35 |         if (priority > pq->heapArray[(pq->size - 1) / 2])
+      |                      ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                     |
+      |                                     heapElem {aka struct nodo}
+heap.c:43:18: error: ‘auxIndice’ undeclared (first use in this function)
+   43 |     printf("%d", auxIndice);
+      |                  ^~~~~~~~~
+heap.c:29:9: error: unused variable ‘priorityAux’ [-Werror=unused-variable]
+   29 |     int priorityAux = pq->size;
+      |         ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+959593e

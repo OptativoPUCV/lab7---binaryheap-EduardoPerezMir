@@ -33,7 +33,7 @@ void heap_push(Heap* pq, void* data, int priority){
     while (true)
     {
         if (priority > pq->heapArray[(pq->size - 1) / 2])
-            indexAux = (pq->size - 1) / 2];
+            indexAux = (pq->size - 1) / 2;
         else
             break;
     }
