@@ -26,18 +26,28 @@ void* heap_top(Heap* pq){
 
 
 void heap_push(Heap* pq, void* data, int priority){
+    int auxIndice = -1;
+    heapElem elemAux = NULL;
+    
     for (int i = 0; i < pq->capac; i++)
     {
         if (pq->heapArray[i].data == NULL)
         {
             pq->heapArray[i].data = data;
             pq->heapArray[i].priority = priority;
+            auxIndice = i;
             break;
         }
     }
-    
-    
-    
+    for (int i = auxIndice - 1; i >= 0; i--)
+    {
+        if (pq->heapArray[auxIndice].priority > pq->heapArray[i].priority)
+        {
+            elemAux = pq->heapArray[auxIndice].priority;
+            pq->heapArray[auxIndice].priority = pq->heapArray[i].priority;
+            pq->heapArray[i].priority = elemAux;
+        }
+    }
 }
 
 
